@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name '.gif' -printf '%f\n' | sed 's/.[^.]$//' | sort -fbn
+find . -type f -name '*.gif' -execdir sh -c 'echo "${1%.*}"' _ {} \n | sort -fbn
